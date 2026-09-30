@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { assets } from '../data/portfolio';
+import { portfolioData, assets } from '../data/portfolio';
 
 const navItems = [
   { id: 'hero', label: 'START' },
@@ -55,12 +55,12 @@ export default function Navbar() {
           <button
             onClick={() => scrollTo('hero')}
             className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BE123C] rounded-md transition-transform duration-300 hover:scale-105"
-            aria-label="Chetan Choudhary Portfolio Home"
+            aria-label={`${portfolioData.name} Portfolio Home`}
           >
             <div className="w-9 h-9 md:w-11 md:h-11 relative flex items-center justify-center p-0.5">
               <img
                 src={assets.logo}
-                alt="Chetan Logo"
+                alt={`${portfolioData.name} Logo`}
                 className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(248,77,158,0.4)]"
                 onError={(e) => {
                   e.target.src = '/logo/Print.svg';
@@ -68,7 +68,7 @@ export default function Navbar() {
               />
             </div>
             <span className="font-display text-2xl tracking-wider text-white hidden sm:inline-block opacity-90 group-hover:opacity-100 transition-opacity">
-              CHETAN
+              {portfolioData.name.toUpperCase()}
             </span>
           </button>
 
@@ -131,7 +131,7 @@ export default function Navbar() {
           >
             <div className="absolute top-6 left-6 flex items-center gap-3">
               <img src={assets.logo} alt="Logo" className="w-8 h-8 object-contain" />
-              <span className="font-display text-2xl tracking-wider text-white">CHETAN</span>
+              <span className="font-display text-2xl tracking-wider text-white">{portfolioData.name.toUpperCase()}</span>
             </div>
 
             <nav className="flex flex-col items-center gap-7">
@@ -153,10 +153,10 @@ export default function Navbar() {
 
             <div className="mt-12 text-center">
               <p className="font-body text-xs tracking-widest text-[#94A3B8] uppercase font-medium">
-                Indore, India • Freelance Video Editor
+                {portfolioData.location} • {portfolioData.status} {portfolioData.role}
               </p>
               <p className="font-body text-xs text-[#CBD5E1] mt-1 font-medium">
-                chetan72006@gmail.com
+                {portfolioData.email} • +91 {portfolioData.phone}
               </p>
             </div>
           </motion.div>

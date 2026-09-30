@@ -37,23 +37,23 @@ export default function Hero() {
         >
           {/* Character visual framed by rounded crimson shape */}
           <div className="relative flex-shrink-0 flex items-center justify-center">
-            {/* The Crimson Capsule Shape from the Reference */}
-            <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full md:rounded-l-full md:rounded-r-[40px] bg-gradient-to-br from-[#BE123C] via-[#881337] to-[#4C0519] p-2 flex items-center justify-center shadow-[0_0_40px_rgba(190,18,60,0.35)] overflow-hidden border border-[#BE123C]/50">
-              {/* Anime Character Image */}
+            {/* The Crimson Circular Frame */}
+            <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-[#BE123C] via-[#881337] to-[#4C0519] p-2 flex items-center justify-center shadow-[0_0_40px_rgba(190,18,60,0.35)] overflow-hidden border border-[#BE123C]/50">
+              {/* Portrait Image */}
               <motion.img
                 src={assets.anime[0]}
-                alt="Chetan Portrait Character"
-                className="w-full h-full object-cover object-top filter brightness-95 contrast-105"
+                alt={`${portfolioData.name} Portrait`}
+                className="w-full h-full object-cover object-[center_20%] rounded-full filter brightness-95 contrast-105"
                 initial={{ scale: 1.15, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.2, delay: 0.2 }}
                 onError={(e) => {
-                  e.target.src = '/animeimages/face.png';
+                  e.target.src = '/adarsh-face.jpeg';
                 }}
               />
               {/* Inner ambient shadow & dark blue rim lighting */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B111E]/70 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute inset-0 rounded-full md:rounded-l-full md:rounded-r-[40px] ring-1 ring-white/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B111E]/70 via-transparent to-transparent pointer-events-none rounded-full" />
+              <div className="absolute inset-0 rounded-full ring-1 ring-white/20 pointer-events-none" />
             </div>
 
             {/* Subtle blue accent glow behind the character */}

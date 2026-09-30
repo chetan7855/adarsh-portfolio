@@ -60,20 +60,20 @@ export default function About() {
               {/* Circular Cyan/Blue Spotlight Aura Behind Character */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-r from-[#0284C7]/30 via-[#132A42]/40 to-transparent blur-[60px] opacity-75 pointer-events-none group-hover:scale-110 transition-transform duration-700" />
               
-              {/* Anime Character Image */}
+              {/* Portrait Image */}
               <img
                 src={assets.anime[0]}
-                alt="Chetan Portrait"
-                className="relative z-10 w-full h-full object-contain object-bottom filter contrast-105 brightness-95 group-hover:scale-102 transition-transform duration-500"
+                alt={`${portfolioData.name} Portrait`}
+                className="relative z-10 w-full h-full object-cover object-[center_20%] rounded-xl filter contrast-105 brightness-95 group-hover:scale-102 transition-transform duration-500"
                 onError={(e) => {
-                  e.target.src = '/animeimages/face.png';
+                  e.target.src = '/adarsh-face.jpeg';
                 }}
               />
 
               {/* Edge Gradient & Vignette Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B111E]/80 via-transparent to-transparent pointer-events-none z-20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B111E]/80 via-transparent to-transparent pointer-events-none z-20 rounded-xl" />
               <div className="absolute bottom-4 left-4 right-4 z-20 flex justify-between items-center text-[10px] font-mono tracking-widest text-[#94A3B8] uppercase border-t border-white/15 pt-2">
-                <span>INDORE, INDIA</span>
+                <span>{portfolioData.location.toUpperCase()}</span>
                 <span className="text-white">DEV & CUT</span>
               </div>
             </div>

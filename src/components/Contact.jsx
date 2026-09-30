@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { portfolioData, assets } from '../data/portfolio';
 
 export default function Contact() {
@@ -34,7 +34,7 @@ export default function Contact() {
         {/* Main 2-Column Split directly from Screen 4 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Circular Anime Frame + Contact Details */}
+          {/* Left Column: Circular Portrait Frame + Contact Details */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -45,13 +45,13 @@ export default function Contact() {
             {/* Circular Framed Character Portrait (Inspired by Reference) */}
             <div className="relative mb-8">
               <div className="w-52 h-52 sm:w-60 sm:h-60 rounded-full bg-[#0E1A2B] border-2 border-[#0284C7] p-2 flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(2,132,199,0.3)] relative group">
-                {/* Second Anime Character visual (full.png) */}
+                {/* Portrait Image */}
                 <img
                   src={assets.anime[1]}
-                  alt="Chetan Avatar Character"
-                  className="w-full h-full object-cover object-top filter brightness-95 contrast-105 group-hover:scale-105 transition-transform duration-500"
+                  alt={`${portfolioData.name} Avatar`}
+                  className="w-full h-full object-cover object-[center_20%] rounded-full filter brightness-95 contrast-105 group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
-                    e.target.src = '/animeimages/full.png';
+                    e.target.src = '/adarsh-face.jpeg';
                   }}
                 />
                 <div className="absolute inset-0 rounded-full ring-1 ring-white/20 pointer-events-none" />
@@ -88,6 +88,27 @@ export default function Contact() {
                     </span>
                     <span className="font-body text-sm font-semibold text-white group-hover:text-white">
                       {portfolioData.email}
+                    </span>
+                  </div>
+                </div>
+                <ExternalLink size={16} className="text-[#94A3B8] group-hover:text-white transition-colors mr-2" />
+              </a>
+
+              {/* Phone */}
+              <a
+                href={`tel:${portfolioData.phone}`}
+                className="group flex items-center justify-between p-3.5 rounded-xl bg-[#132A42]/50 border border-[#0284C7]/40 hover:border-[#0284C7] transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(2,132,199,0.35)]"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-[#0B111E]/70 text-[#F8FAFC]">
+                    <Phone size={18} className="group-hover:text-[#BE123C] transition-colors" />
+                  </div>
+                  <div className="text-left">
+                    <span className="font-body text-[10px] uppercase tracking-wider text-[#94A3B8] font-medium block">
+                      PHONE / WHATSAPP
+                    </span>
+                    <span className="font-body text-sm font-semibold text-white group-hover:text-white">
+                      +91 {portfolioData.phone}
                     </span>
                   </div>
                 </div>
@@ -138,7 +159,7 @@ export default function Contact() {
                 <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-[#BE123C]" />
                 <span className="w-2 h-2 rounded-full bg-[#BE123C]" />
                 <span className="font-mono text-[10px] tracking-widest text-[#94A3B8] font-medium">
-                  CHETAN CHOUDHARY • 2026
+                  {portfolioData.name.toUpperCase()} • {portfolioData.year}
                 </span>
               </div>
             </div>
@@ -152,7 +173,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto w-full pt-16 mt-16 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94A3B8] font-body tracking-wider z-10 font-medium">
         <div className="flex items-center gap-3">
           <img src={assets.logo} alt="Logo" className="w-6 h-6 object-contain opacity-80" />
-          <span className="uppercase text-white/90">CHETAN CHOUDHARY — VIDEO EDITOR</span>
+          <span className="uppercase text-white/90">{portfolioData.name.toUpperCase()} — VIDEO EDITOR</span>
         </div>
         <div className="mt-4 sm:mt-0 font-mono text-[11px] text-white/60">
           DESIGNED FOR CINEMATIC IMMERSION

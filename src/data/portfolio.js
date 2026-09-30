@@ -1,10 +1,11 @@
 export const portfolioData = {
-  name: "Chetan Choudhary",
+  name: "Adarsh",
   role: "Video Editor",
   status: "Freelance",
   year: "2026",
-  location: "Indore, India",
-  email: "chetan72006@gmail.com",
+  location: "India",
+  email: "adrash.32004@gmail.com",
+  phone: "9871691541",
   about:
     "I’m a starter freelance video editor focused on creating engaging visual content. I work with short-form videos, YouTube content, motion and color, while continuously improving my editing style and creative workflow.",
   experience: {
@@ -46,9 +47,10 @@ export const portfolioData = {
 
 export const assets = {
   logo: "/assets/logo/Print.svg",
+  profile: "/adarsh face/adarsh-face.jpeg",
   anime: [
-    "/assets/anime/anime-01.png", // face.png
-    "/assets/anime/anime-02.png"  // full.png
+    "/adarsh face/adarsh-face.jpeg",
+    "/adarsh face/adarsh-face.jpeg"
   ],
   software: {
     afterEffects: "/assets/software/after-effects.png",
