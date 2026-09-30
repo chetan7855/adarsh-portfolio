@@ -47,14 +47,14 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          scrolled ? 'py-4 bg-black/85 backdrop-blur-md border-b border-white/5 shadow-2xl' : 'py-6 bg-transparent'
+          scrolled ? 'py-4 bg-[#0B111E]/90 backdrop-blur-md border-b border-white/10 shadow-2xl' : 'py-6 bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollTo('hero')}
-            className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8E001F] rounded-md transition-transform duration-300 hover:scale-105"
+            className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BE123C] rounded-md transition-transform duration-300 hover:scale-105"
             aria-label="Chetan Choudhary Portfolio Home"
           >
             <div className="w-9 h-9 md:w-11 md:h-11 relative flex items-center justify-center p-0.5">
@@ -73,23 +73,23 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Pill Navigation (Inspired directly by Reference Image) */}
-          <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-[#071D2A]/60 border border-[#0A3A55]/60 backdrop-blur-sm">
+          <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-[#132A42]/60 border border-[#0284C7]/40 backdrop-blur-sm shadow-md">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
-                  className={`relative px-5 py-1.5 rounded-full font-body text-xs uppercase tracking-cinematic transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                  className={`relative px-5 py-1.5 rounded-full font-body text-xs uppercase tracking-cinematic transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 font-medium ${
                     isActive
                       ? 'text-white font-semibold shadow-inner'
-                      : 'text-[#777777] hover:text-[#F2F2F2] hover:tracking-[0.28em]'
+                      : 'text-[#94A3B8] hover:text-white hover:tracking-[0.28em]'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activePill"
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-[#0A3A55] to-[#061521] border border-[#0A3A55] -z-10 shadow-[0_0_15px_rgba(10,58,85,0.6)]"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-[#0284C7] to-[#0E1A2B] border border-[#0284C7] -z-10 shadow-[0_0_15px_rgba(2,132,199,0.7)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -101,8 +101,8 @@ export default function Navbar() {
 
           {/* Desktop Right Status */}
           <div className="hidden lg:flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#8E001F] animate-pulse" />
-            <span className="font-body text-[11px] uppercase tracking-widest text-[#777777]">
+            <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-pulse shadow-[0_0_6px_#BE123C]" />
+            <span className="font-body text-[11px] uppercase tracking-widest text-[#94A3B8] font-medium">
               AVAILABLE FOR COMMISSIONS
             </span>
           </div>
@@ -110,7 +110,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-lg bg-[#071D2A]/60 border border-[#0A3A55]/40 text-[#F2F2F2] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+            className="md:hidden p-2.5 rounded-lg bg-[#132A42]/60 border border-[#0284C7]/40 text-[#F8FAFC] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             aria-label="Toggle Navigation Menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -127,7 +127,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 md:hidden bg-black/95 backdrop-blur-xl flex flex-col justify-center items-center px-8"
+            className="fixed inset-0 z-30 md:hidden bg-[#0B111E]/95 backdrop-blur-xl flex flex-col justify-center items-center px-8"
           >
             <div className="absolute top-6 left-6 flex items-center gap-3">
               <img src={assets.logo} alt="Logo" className="w-8 h-8 object-contain" />
@@ -143,7 +143,7 @@ export default function Navbar() {
                   transition={{ delay: index * 0.08 }}
                   onClick={() => scrollTo(item.id)}
                   className={`font-display text-5xl uppercase tracking-wider transition-colors ${
-                    activeSection === item.id ? 'text-[#F2F2F2] border-b-2 border-[#8E001F]' : 'text-[#777777] hover:text-white'
+                    activeSection === item.id ? 'text-white border-b-2 border-[#BE123C]' : 'text-[#94A3B8] hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -152,10 +152,10 @@ export default function Navbar() {
             </nav>
 
             <div className="mt-12 text-center">
-              <p className="font-body text-xs tracking-widest text-[#777777] uppercase">
+              <p className="font-body text-xs tracking-widest text-[#94A3B8] uppercase font-medium">
                 Indore, India • Freelance Video Editor
               </p>
-              <p className="font-body text-xs text-[#777777]/80 mt-1">
+              <p className="font-body text-xs text-[#CBD5E1] mt-1 font-medium">
                 chetan72006@gmail.com
               </p>
             </div>

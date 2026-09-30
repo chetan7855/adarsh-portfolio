@@ -26,3 +26,6 @@ dist-ssr
 # Environment variables
 .env
 .env.*
+
+# Local original video backups
+backup_original_videos/

@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
-        darkBlue: "#061521",
-        deepNavy: "#071D2A",
-        primaryText: "#F2F2F2",
-        secondaryText: "#777777",
-        subtleRed: "#8E001F",
-        blueGlow: "#0A3A55",
+        background: "#0B111E",
+        darkBlue: "#0E1A2B",
+        deepNavy: "#132A42",
+        primaryText: "#F8FAFC",
+        secondaryText: "#94A3B8",
+        subtleRed: "#BE123C",
+        blueGlow: "#0284C7",
       },
       fontFamily: {
         display: ["Teko", "sans-serif"],

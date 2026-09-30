@@ -9,7 +9,7 @@ import FinalScreen from './components/FinalScreen';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-black text-[#F2F2F2] selection:bg-[#8E001F] selection:text-white">
+    <div className="relative min-h-screen bg-[#0B111E] text-[#F8FAFC] selection:bg-[#BE123C] selection:text-white">
       {/* 35mm Grain & Atmosphere overlay */}
       <GrainOverlay />
 
