@@ -195,19 +195,14 @@ export default function ProjectVideo({
           TAP TO PLAY / SOUND
         </div>
 
-        {/* Bottom Details Overlay (Project Title, Tag, Label) */}
+        {/* Bottom Details Overlay (Only Video Number and SHORT FORM) */}
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 z-20 flex flex-col justify-end bg-gradient-to-t from-[#0B111E] via-[#0B111E]/90 to-transparent pt-14 pointer-events-none">
           <span className="font-body text-[10px] uppercase tracking-cinematic text-[#FB7185] font-semibold block mb-1">
-            {project.tag || 'SHORT FORM'}
+            SHORT FORM
           </span>
           <h4 className="font-display text-2xl sm:text-3xl text-white tracking-wide leading-none drop-shadow-md">
             {project.title}
           </h4>
-          {project.label && (
-            <p className="font-body text-xs text-[#E2E8F0] mt-1.5 tracking-wider uppercase line-clamp-1 font-medium">
-              {project.label}
-            </p>
-          )}
 
           <div className="mt-3 pt-2.5 border-t border-white/20 flex items-center justify-between text-[10px] font-mono text-[#CBD5E1]">
             <span className="tracking-widest uppercase flex items-center gap-1.5 font-medium">
